@@ -1,0 +1,231 @@
+@font-face {
+  font-weight: 200;
+font-family: 'Manr'; 
+src: url(fonts//manrope/Manrope-ExtraLight.ttf); 
+}
+
+@font-face {
+  font-weight: 300;
+font-family: 'Manr'; 
+src: url(fonts/manrope/Manrope-Light.ttf); 
+}
+
+@font-face {
+  font-weight: 400;
+font-family: 'Manr'; 
+src: url(fonts/manrope/Manrope-Regular.ttf); 
+}
+
+@font-face {
+  font-weight: 500;
+font-family: 'Manr'; 
+src: url(fonts/manrope/Manrope-Medium.ttf); 
+}
+
+@font-face {
+  font-weight: 600;
+font-family: 'Manr'; 
+src: url(fonts/manrope/Manrope-SemiBold.ttf); 
+}
+
+@font-face {
+  font-weight: 700;
+font-family: 'Manr'; 
+src: url(fonts/manrope/Manrope-Bold.ttf); 
+}
+
+@font-face {
+  font-weight: 800;
+font-family: 'Manr'; 
+src: url(fonts/manrope/Manrope-ExtraBold.ttf); 
+}
+
+
+
+
+@font-face {
+  font-weight: 100;
+font-family: 'Mont'; 
+src: url(fonts/Montserrat-Thin.ttf); 
+}
+
+@font-face {
+  font-weight: 200;
+font-family: 'Mont'; 
+src: url(fonts/Montserrat-ExtraLight.ttf); 
+}
+
+@font-face {
+  font-weight: 300;
+font-family: 'Mont'; 
+src: url(fonts/Montserrat-Light.ttf); 
+}
+
+@font-face {
+  font-weight: 400;
+font-family: 'Mont'; 
+src: url(fonts/Montserrat-Regular.ttf); 
+}
+
+@font-face {
+  font-weight: 500;
+font-family: 'Mont'; 
+src: url(fonts/Montserrat-Medium.ttf); 
+}
+
+@font-face {
+  font-weight: 600;
+font-family: 'Mont'; 
+src: url(fonts/Montserrat-SemiBold.ttf); 
+}
+
+@font-face {
+  font-weight: 700;
+font-family: 'Mont'; 
+src: url(fonts/Montserrat-Bold.ttf); 
+}
+
+@font-face {
+  font-weight: 800;
+font-family: 'Mont'; 
+src: url(fonts/Montserrat-ExtraBold.ttf); 
+}
+
+@font-face {
+  font-weight: 900;
+font-family: 'Mont'; 
+src: url(fonts/Montserrat-Black.ttf); 
+}
+
+
+
+:root{
+  /*--text-color: rgb(218, 218, 218);
+  --main-color: #009fd2;
+  --block-color: rgb(40, 40, 40);
+  --block-shadow: rgba(0, 0, 0, .2);
+  --background-main: rgb(22 22 22);*/
+  --text-color: rgb(218, 218, 218);
+  --main-color: #009fd2;
+  --block-color: #2b2f3c;
+  --block-shadow: rgba(0, 0, 0, .2);
+  --background-main: #141824;
+}
+
+
+section {
+    position: relative;
+    margin-top: 50px;
+    /* tablet sizing*/
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+  
+  .carousel__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr max-content;
+    grid-template-areas:
+      "title nav"
+      "carousel carousel";
+    position: relative;
+    width: 100%;
+    height: max-content;
+    gap: 2rem 0;
+    align-items: center;
+  }
+  
+  .carousel__header {
+    grid-area: title;
+    font-weight: 800;
+    font-size: 32px;
+    font-family: 'Mont';
+    color: var(--text-color);
+  }
+  
+  .carousel {
+    grid-area: carousel;
+    position: relative;
+    overflow-x: clip;
+  }
+  
+  .carousel__item {
+    position: absolute;
+    padding: 2rem;
+    border-radius: 16px;
+    /*   border: 1px solid #999; */
+    background: #eee;
+    top: 0;
+    transition: all ease-in-out 800ms;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 16/9;
+  }
+  
+  .carousel__item--active {
+    top: -0.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adjust the values for the hover effect */
+  }
+  
+  .carousel__item__name {
+    color: var(--text-color);
+    font-family: 'Mont';
+    text-align: center;
+  }
+  
+  .carousel__item > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem 0;
+  }
+  
+  /* Colors for different flavors */
+  .carousel__item--mango {
+    background-color: #0077b300;
+  }
+  
+  .carousel__item--vanilla {
+    background-color: #005d8c00;
+  }
+  
+  .carousel__item--strawberry {
+    background-color: #004d7400;
+  }
+  
+  .carousel__item--matcha {
+    background-color: #003e5d00;
+  }
+  
+  .carousel__item--chocolate {
+    background-color: #1d6d9800;
+  }
+  
+  /* Caousel Nav */
+  .carousel__nav {
+    grid-area: nav;
+    justify-self: end;
+    display: flex;
+    justify-content: center;
+    gap: 0 1rem;
+  }
+  
+  .carousel__nav__item {
+    padding: 0.375rem;
+    border: 1px solid #eee;
+    border-radius: 24px;
+    background-color: #e5e5e5;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 0;
+  }
+  
+  .carousel__nav__item:hover {
+    transition: all .7s ease-in-out;
+    background-color: #6cd7fb;
+  }
+  
